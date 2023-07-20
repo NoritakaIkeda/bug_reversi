@@ -5,8 +5,8 @@ class Position
 
   def initialize(cellstr: nil, row: nil, col: nil)
     if cellstr
-      @row = ROW.index(cellstr[0])
-      @col = COL.index(cellstr[1])
+      @row = COL.index(cellstr[1])
+      @col = ROW.index(cellstr[0])
     else
       @row = row
       @col = col
@@ -24,7 +24,7 @@ class Position
   def stone_color(board)
     return nil if out_of_board?
 
-    board[col][row]
+    board[row][col]
   end
 
   def to_cellstr
